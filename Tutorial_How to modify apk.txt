@@ -1,0 +1,27 @@
+This is a tutorial on how to modify an apk, to change its icon, theme, or even the text within the app
+
+Step 1: Download apktool from https://code.google.com/p/android-apktool/downloads/list
+jar from : apktool1.5.2.tar.bz2
+application from : apktool-install-windows and similar for other OS.
+
+Step 2: Download SignApk from  http://www.mediafire.com/download/gs6n10oh09c039n/SignApk.zip
+
+Step 3: Copy all the three contents of the zip file in single directory.
+
+Step 4: Open the commandprompt and go to the directory having all the files.
+
+Step 5: Copy the apk you want to modify in the same directory.
+
+Step 6: Execute the command 
+	apktool d [apk name here].apk
+It will get decompile in the same directory with the name as apk name.
+
+Step 7: Perform the changes in the decompile apk folder.
+
+Step 8: Recompile the apk.
+	apktool b [name of the folder of apk] [desiered name of new apk].apk
+It will create a apk file
+
+Step 9: Sign the apk with the help of signapk.jar without which it will not install.
+java -jar signapk.jar certificate.pem key.pk8 [name of the apk created in step8].apk [another apk].apk 
+It will create the new modified apk to be installed in the device.
